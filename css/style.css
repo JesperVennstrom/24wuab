@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+}
+#wrapperLanding{
+    width: 100%;
+    height: 200%;
+    display: grid;
+    grid-template-columns:100%;
+    grid-template-rows:20vh 80vh 80vh 20vh;
+    grid-template-areas: 
+    'hd'
+    'mn'
+    'sc'
+    'ft'
+    ;
+}
+#menuButton {
+    cursor: pointer;
+}
+header{
+    grid-area: hd;
+    background-color: #202020;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+header img{
+    position: absolute;
+    right: 1rem;
+    height: 10%;
+    cursor: pointer;
+    
+}
+main{
+    grid-area: mn;
+}
+main img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+section{
+    grid-area: sc;
+}
+footer{
+    grid-area: ft;
+}
+
+nav{
+    background-color: blue;
+}
+.closed{
+    position: fixed;
+    height: 100%;
+    width:50%;
+    right: -50%;
+    transition: left 0.3s;
+    z-index: 10;
+}
+.show{
+    right: 0;
+    position: fixed;
+    height: 100%;
+    width:50%;
+}
