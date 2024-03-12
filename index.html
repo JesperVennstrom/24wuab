@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="js/script.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -18,8 +17,16 @@
     <main>
       <img src="img/Landing_Image.jpg" alt="Background_Image">
     </main>
-    <section>Section</section>
+    <section id="item-to-add">
+      <img class="arrow" id="arrow_left" src="img/arrow_left.png" alt="" onclick="goLeft()">
+      <img class="arrow" id="arrow_right" src="img/arrow_right.png" alt="" onclick="goRight()">
+      <div id = "link1"><div class="fadeLayer"></div><img src="img/blue.png" alt="" id="linkImg1"></div>
+      <div id="link2"><img src="img/orange.png" alt="" id="linkImg2"></div>
+      <div id= "link3"><div class="fadeLayer"></div><img src="img/green.png" alt="" id="linkImg3"></div>
+    </section>
     <footer>Footer</footer>
   </div>
+  <script src="js/script.js"></script>
+
 </body>
 </html>

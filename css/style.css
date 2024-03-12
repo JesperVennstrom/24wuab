@@ -41,25 +41,75 @@ main img{
 }
 section{
     grid-area: sc;
+    background-color: #303030;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+section div{
+    width: 45%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+section div img {
+    height: 100%;
+    width: 100%;
+}
+#link1{
+    width: 22.5%;
+}
+#link2{
+    z-index: 2;
+}
+#link3 {
+    width: 22.5%;
+    display: flex;
+    
+}
+
+.arrow{
+    position: absolute;
+    z-index: 10; 
+}
+#arrow_left {
+    left: 30%;
+}
+#arrow_right {
+    right: 30%;
+}
+
+.fadeLayer {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    top: 0;
+    left: 9;
+    width: 100%;
+    height: 100%;
+}
+
 footer{
     grid-area: ft;
+    background-color:#202020;
 }
 
 nav{
-    background-color: blue;
+    background-color:#202020;
+    height: 80%;
+    width:15%;
+    bottom: 0;
 }
 .closed{
     position: fixed;
-    height: 100%;
-    width:50%;
     right: -50%;
-    transition: left 0.3s;
+    transition: right 0.3s;
     z-index: 10;
+    
 }
 .show{
     right: 0;
     position: fixed;
-    height: 100%;
-    width:50%;
 }
