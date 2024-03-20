@@ -1,12 +1,114 @@
+@font-face {
+    font-family: keania_one;
+    src: url(../fonts/KeaniaOne-Regular.woff);
+    src: url(../fonts/KeaniaOne-Regular.woff2);
+}
+
 body{
+    background-color: #303030;
     margin: 0;
 }
+#wrapperTrailer{
+    height: 100vh;
+    position: relative;
+}
+.headerTrailer {
+    position: fixed;
+    top: -15%;
+    width: 100%;
+    height: 20%;
+    transition: top 0.3s;
+}
+.headOpen{
+    top: 0;
+    transition: top 0.3s;
+}
+.footerTrailer {
+    width: 100%;
+    height: 20%;
+    position: fixed;
+    bottom: -15%;
+    transition: bottom 0.3s;
+}
+.footOpen{
+    bottom: 0;
+    transition: bottom 0.3s;
+
+}
+.headerTrailer img {
+    height: 50%;
+}
+.video {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+video {
+    object-fit: cover;
+    position: fixed;
+    height: 100%;
+    right: 50%;
+    transform: translateX(50%);
+}
+@media (max-aspect-ratio: 1/1){
+    #wrapperDownload {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 60% 20%;
+        grid-template-areas: 
+        'hd'
+        'mn'
+        'ft'
+        ;
+    }
+    #downloadMain{
+        grid-area: mn;
+        background-color: #303030;
+        text-decoration: none;
+        color: white;
+        font-size: 32px;
+        font-family: keania_one;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+    #downloadMain a{
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        padding: 10% 5% 10% 5%;
+    }
+    aside {
+        display: none;
+    }
+    .sectionDownload {
+        display: none;
+    }
+}
+
+@media (min-aspect-ratio: 1/1){
+    #wrapperDownload {
+        grid-template-areas: 
+        'hd hd'
+        'as1 sc1'
+        'sc2 as2'
+        'ft ft'
+        ;
+    }
+}
+
 #wrapperLanding{
     width: 100%;
     height: 200%;
     display: grid;
     grid-template-columns:100%;
-    grid-template-rows:20vh 80vh 80vh 20vh;
     grid-template-areas: 
     'hd'
     'mn'
@@ -23,6 +125,8 @@ header{
     display: flex;
     align-items: center;
     color: white;
+    z-index: 10;
+    font-family: keania_one;
 }
 header img{
     position: absolute;
@@ -33,19 +137,52 @@ header img{
 }
 main{
     grid-area: mn;
+    position: relative;
+    color: white;
+    text-align: center;
 }
 main img{
     width: 100%;
     height: 100%;
     object-fit:cover;
 }
+footer{
+    grid-area: ft;
+    background-color:#202020;
+}
+
+nav{
+    background-color:#202020;
+    height: 80%;
+    width:15%;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    font-size: 2vw;
+    font-family: keania_one;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 5vh;
+}
+.closed{
+    position: fixed;
+    right: -50%;
+    transition: right 0.3s;
+    z-index: 10;
+    
+}
+.show{
+    right: 0;
+    position: fixed;
+}
 section{
     grid-area: sc;
     background-color: #303030;
-    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 section div{
     width: 45%;
@@ -58,58 +195,157 @@ section div img {
     height: 100%;
     width: 100%;
 }
-#link1{
-    width: 22.5%;
-}
-#link2{
-    z-index: 2;
-}
-#link3 {
-    width: 22.5%;
-    display: flex;
-    
-}
-
-.arrow{
+#linkDiv1 a {
     position: absolute;
-    z-index: 10; 
+    right: 50%;
+    transform: translateX(50%);
+    top: 80%;
+    text-decoration: none;
+    background-color: white;
+    padding: 2% 20% 2% 20%;
+    font-family: keania_one;
+    color: black;
 }
-#arrow_left {
-    left: 30%;
-}
-#arrow_right {
-    right: 30%;
-}
-
-.fadeLayer {
+#linkDiv2 a {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    top: 0;
-    left: 9;
-    width: 100%;
-    height: 100%;
+    right: 50%;
+    transform: translateX(50%);
+    top: 80%;
+    text-decoration: none;
+    background-color: white;
+    padding: 2% 20% 2% 20%;
+    font-family: keania_one;
+    color: black;
 }
-
-footer{
-    grid-area: ft;
-    background-color:#202020;
+#linkDiv3 a {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: 80%;
+    text-decoration: none;
+    background-color: white;
+    padding: 2% 20% 2% 20%;
+    font-family: keania_one;
+    color: black;
 }
-
-nav{
-    background-color:#202020;
-    height: 80%;
-    width:15%;
-    bottom: 0;
+@media (max-aspect-ratio: 1/1){
+    #wrapperLanding {
+        grid-template-rows:20vh 80vh 240vh 20vh ;
+    }
+    #arrow_left {
+        display: none;
+    }
+    #arrow_right {
+        display: none;
+    }
+    header h1 {
+        display: none;
+    }
+    main h1{
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        z-index: 1;
+        top: 10%;
+        font-family: keania_one;
+    }
+    nav {
+        font-size: 10vw;
+    }
+    section{
+        display: flex;
+        flex-direction: column;
+        font-size: 32px;
+    }
+    section div {
+        height: calc(100%/3);
+        width: 100%;
+    }
+    nav {
+        width: 100%;
+        background-color: #303030;
+        right: -100%;
+    }
+    .closed{
+        right: -100%;
+    }
+    .show{
+        right: 0;
+    }
+    .fadeLayer{
+        display: none;
+    }
 }
-.closed{
-    position: fixed;
-    right: -50%;
-    transition: right 0.3s;
-    z-index: 10;
+@media (min-aspect-ratio: 1/1){
+    #wrapperLanding {
+        grid-template-rows:20vh 80vh 80vh 20vh ;
+    }
+    header h1 {
+        position: absolute;
+        left: 2.5%;
+    }
     
-}
-.show{
-    right: 0;
-    position: fixed;
+    section{
+        grid-area: sc;
+        background-color: #303030;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    main h1 {
+        display: none;
+    }
+    section div{
+        width: 45%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+    section div img {
+        height: 100%;
+        width: 100%;
+    }
+    #linkDiv1{
+        width: 22.5%;
+    }
+    #linkDiv1 a {
+        display: none;
+    }
+    #linkDiv2{
+        z-index: 2;
+        position: relative;
+    }
+    #linkDiv3 {
+        width: 22.5%;
+        display: flex;
+    }
+    #linkDiv3 a {
+        display: none;
+    }
+
+    .arrow{
+        position: absolute;
+        z-index: 10; 
+        cursor: pointer;
+        
+    }
+    #arrow_left {
+        left: 30%;
+    }
+    #arrow_right {
+        right: 30%;
+    }
+
+    .fadeLayer {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        top: 0;
+        left: 9;
+        width: 100%;
+        height: 100%;
+    }
+
 }
