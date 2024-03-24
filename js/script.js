@@ -33,23 +33,23 @@ function goRight() {
 }
 function switchImg(){
     if (x == 0) {
-        document.getElementById("linkImg1").src = "img/blue.png";
-        document.getElementById("linkImg2").src = "img/orange.png";
-        document.getElementById("linkImg3").src = "img/green.png";
+        document.getElementById("linkImg1").src = "img/download.jpg";
+        document.getElementById("linkImg2").src = "img/trailer.jpg";
+        document.getElementById("linkImg3").src = "img/story.jpg";
 
         document.getElementById("link2").href = "trailer.html";
         document.getElementById("link2").innerText = "Trailer";
     }else if (x == 1) {
-        document.getElementById("linkImg1").src = "img/green.png";
-        document.getElementById("linkImg2").src = "img/blue.png";
-        document.getElementById("linkImg3").src = "img/orange.png";
+        document.getElementById("linkImg1").src = "img/story.jpg";
+        document.getElementById("linkImg2").src = "img/download.jpg";
+        document.getElementById("linkImg3").src = "img/trailer.jpg";
 
         document.getElementById("link2").href = "download.html";
         document.getElementById("link2").innerText = "Download";
     }else {
-        document.getElementById("linkImg1").src = "img/orange.png";
-        document.getElementById("linkImg2").src = "img/green.png";
-        document.getElementById("linkImg3").src = "img/blue.png";
+        document.getElementById("linkImg1").src = "img/trailer.jpg";
+        document.getElementById("linkImg2").src = "img/story.jpg";
+        document.getElementById("linkImg3").src = "img/download.jpg";
 
         document.getElementById("link2").href = "story.html";
         document.getElementById("link2").innerText = "Story";
