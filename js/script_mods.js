@@ -8,6 +8,12 @@ function showNav() {
 function showPopup(item) {
     let popup = document.querySelector(".popup");
     popup.classList.toggle("removed");
+    popupElements.forEach((element, i) => {
+        if(i===item) {
+            element.classList.toggle("removed");
+            console.log(element)
+        }
+    });
 }
 
 document.getElementById("menuButton").addEventListener("click", () => {
@@ -18,9 +24,16 @@ addEventListener("scroll", () => {
         showNav();
     }
 })
-document.querySelector(".mod").addEventListener("click", () => {
-    showPopup("1");
-})
+const modElements = document.querySelectorAll('.mod');
+const popupElements = document.querySelectorAll('.items');
+
+modElements.forEach((element, i) => {
+    element.addEventListener('click', (event) => {
+        showPopup(i);
+        console.log(i);
+    });
+});
+
 document.getElementById("X").addEventListener("click", () => {
     showPopup("X");
 })
