@@ -24,6 +24,7 @@ header img{
     right: 1rem;
     height: 10%;
     cursor: pointer;
+    width: auto;
     
 }
 footer{
@@ -94,6 +95,7 @@ nav a {
     width: 100%;
     height: 160%;
     display: grid;
+    position: relative;
     grid-template-columns: 1fr;
     grid-template-rows: 20vh 40vh 80vh 20vh;
     grid-template-areas: 
@@ -104,9 +106,105 @@ nav a {
     ;
 
 }
+.popup {
+    position: fixed;
+    top: 5%;
+    right: 12.5%;
+    width: 75%;
+    height: 90%;
+    background-color: #101010;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-radius: 5%;
+    color: white;
+    overflow: auto;
+}
+.popup.removed{
+    display: none;
+}
+.popup::-webkit-scrollbar {
+    width: 1vw;
+  }
+  
+.popup::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    height: 20vh;
+    margin-top: 10vh;
+    margin-bottom: 3vh;
+}
+  
+.popup::-webkit-scrollbar-thumb {
+    background:#5e5e5e ;
+    border-radius: 10px;
+    height: 20vh;
+}
+.items h1 {
+    color: white;
+    position: absolute;
+    padding: 1% 5% 1% 5%;
+    border-radius: 10%;
+    text-decoration: underline;
+    background-color: #202020;
+    right: 50%;
+    transform: translateX(50%);
+    top: 50%;
+    font-family: keania_one;
+}
+.bread {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 60%;
+    padding: 5% 0 5% 0;
+    left: 0;
+}
+.popup img {
+    left: 0;
+    width: 100%;
+    overflow: hidden;   
+    position: absolute;
+    top: 0;
+    border-radius: 10% 10% 0 0;
+    z-index: -1;
+}
+.popup p {
+    font-family: keania_one;
+    font-size: 3vh;
+    padding: 2.5%;
+    z-index: 3000000;
+}
+#X{
+    position: fixed;
+    right: 12.5%;
+    top: 5%;
+    color: white;
+    padding-right: 2.5%;
+    font-family:'Courier New', Courier, monospace;
+    z-index: 100;
+}
+#item2, #item3, #item4, #item5, #item6 {
+    display: none;
+}
 #mainMods{
     grid-area: mn;
-    background-color: aqua;
+    background-color: #424242;
+    display: flex;
+    font-family: keania_one;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+#mainMods h1{
+    color: white;
+    margin: 0;
+    margin-bottom: 2.5%;
+    padding: 1% 5% 1% 5%;
+    border-radius: 5%;
+    text-decoration: underline;
+    background-color: #202020;
 }
 #mods{
     grid-area: sc; 
@@ -558,7 +656,7 @@ section div img {
     header h1 {
         display: none; 
     }
-    main h1{
+    #wrapperMain h1{
         position: absolute;
         right: 50%;
         transform: translateX(50%);
@@ -611,7 +709,7 @@ section div img {
         align-items: center;
         justify-content: center;
     }
-    main h1 {
+    #wrapperMain h1 {
         display: none;
     }
     section div{
