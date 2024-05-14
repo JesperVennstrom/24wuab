@@ -18,11 +18,12 @@ header{
     color: white;
     z-index: 10;
     font-family: keania_one;
+    position: relative;
 }
 header img{
     position: absolute;
     right: 1rem;
-    height: 10%;
+    height: 50%;
     cursor: pointer;
     width: auto;
     
@@ -121,8 +122,11 @@ nav a {
     color: white;
     overflow: auto;
 }
-.removed{
+.items.removed, .popup.removed{
     display: none;
+}
+#wrapperMods.removed {
+    overflow-y: hidden;     
 }
 .popup::-webkit-scrollbar {
     width: 1vw;
@@ -158,8 +162,15 @@ nav a {
     height: auto;
     position: absolute;
     top: 60%;
-    padding: 5% 0 5% 0;
+    padding:  5% 0 5% 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.bread h2{
+    margin: 0;
+    text-decoration: underline;
 }
 .popup img {
     left: 0;
@@ -171,22 +182,22 @@ nav a {
     z-index: -1;
 }
 .popup p {
-    font-family: keania_one;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 3vh;
     padding: 2.5%;
-    z-index: 3000000;
+    z-index: 300;
+    width: 75%;
+    right: 50%;
 }
 #X{
     position: fixed;
     right: 12.5%;
     top: 5%;
+    cursor: pointer;
     color: white;
     padding-right: 2.5%;
     font-family:'Courier New', Courier, monospace;
     z-index: 100;
-}
-#item2, #item3, #item4, #item5, #item6 {
-    display: none;
 }
 #mainMods{
     grid-area: mn;

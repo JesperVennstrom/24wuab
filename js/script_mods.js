@@ -8,10 +8,17 @@ function showNav() {
 function showPopup(item) {
     let popup = document.querySelector(".popup");
     popup.classList.toggle("removed");
+    let wrapper = document.getElementById("wrapperMods")
+    wrapper.classList.toggle("removed");
+    scrollTo(top);
     popupElements.forEach((element, i) => {
         if(i===item) {
             element.classList.toggle("removed");
-            console.log(element)
+        }
+        if(item==="X") {
+            if(element.classList.contains("removed") === false) {
+                element.classList.toggle("removed");
+            }
         }
     });
 }
